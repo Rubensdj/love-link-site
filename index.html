@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Love Link</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Love Link - Rubens & Hellen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -13,43 +13,57 @@
             background: #fff;
             min-height: 100vh;
             color: #333;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 450px;
             margin: 0 auto;
             background: #fff;
+            min-height: 100vh;
         }
 
-        /* SECTION 1 - HEADER */
-        .s1 {
-            background: linear-gradient(135deg, #ff80ab 0%, #ff4081 50%, #e91e63 100%);
+        /* ===== SECTION 1: HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, #ff75a7 0%, #ff4d6d 50%, #e91e63 100%);
             color: white;
             text-align: center;
             padding: 50px 30px 70px;
             border-bottom-left-radius: 50px;
             border-bottom-right-radius: 50px;
+            position: relative;
+            overflow: hidden;
         }
-        .s1 h1 {
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        .header h1 {
             font-size: 1.45rem;
             font-weight: 300;
             line-height: 1.5;
+            position: relative;
+            z-index: 2;
         }
-        .s1 p {
+        .header p {
             font-size: 1.1rem;
             font-weight: 400;
-            margin-top: 8px;
+            position: relative;
+            z-index: 2;
         }
 
-        /* SECTION 2 - COUPLE */
-        .s2 {
+        /* ===== SECTION 2: COUPLE ===== */
+        .couple-section {
             text-align: center;
             padding: 15px 30px 30px;
             margin-top: -35px;
             position: relative;
             z-index: 10;
         }
-        .s2 .names {
+        .names-badge {
             font-size: 1.9rem;
             font-weight: 700;
             color: #e91e63;
@@ -57,11 +71,11 @@
             padding: 12px 35px;
             border-radius: 50px;
             display: inline-block;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
-        /* SECTION 3 - TIMER */
-        .s3 {
+        /* ===== SECTION 3: TIMER ===== */
+        .timer-section {
             margin: 0 25px 20px;
             padding: 25px 20px;
             background: white;
@@ -70,44 +84,44 @@
             text-align: center;
             border: 1px solid #ffebee;
         }
-        .s3 .title {
+        .timer-title {
             font-size: 0.9rem;
             color: #888;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 15px;
         }
-        .s3 .grid {
+        .timer-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 8px;
         }
-        .s3 .box {
+        .timer-box {
             background: linear-gradient(135deg, #ffebee 0%, #fce4ec 100%);
             padding: 12px 8px;
             border-radius: 12px;
         }
-        .s3 .number {
+        .timer-number {
             display: block;
             font-size: 1.5rem;
             font-weight: 700;
             color: #e91e63;
         }
-        .s3 .label {
+        .timer-label {
             font-size: 0.65rem;
             color: #999;
             text-transform: uppercase;
             margin-top: 3px;
         }
-        .s3 .msg {
+        .timer-message {
             margin-top: 18px;
             font-size: 0.85rem;
             color: #666;
             font-style: italic;
         }
 
-        /* SECTION 4 - LETTER */
-        .s4 {
+        /* ===== SECTION 4: LETTER ===== */
+        .letter-section {
             margin: 0 25px 20px;
             padding: 25px;
             background: linear-gradient(135deg, #f8bbd0 0%, #e1bee7 100%);
@@ -115,47 +129,47 @@
             border-left: 5px solid #ff4081;
             box-shadow: 0 5px 20px rgba(233,30,99,0.15);
         }
-        .s4 .content {
+        .letter-content {
             background: white;
             padding: 20px;
             border-radius: 12px;
             line-height: 1.7;
             color: #555;
         }
-        .s4 .greeting {
-            font-family: 'Great Vibes', cursive;
+        .letter-greeting {
+            font-family: 'Parisienne', cursive;
             font-size: 1.8rem;
             color: #e91e63;
             margin-bottom: 12px;
         }
-        .s4 .text {
+        .letter-text {
             font-style: italic;
             margin-bottom: 12px;
         }
-        .s4 .signature {
+        .letter-signature {
             text-align: right;
             font-weight: 600;
             color: #e91e63;
             font-style: normal;
         }
 
-        /* SECTION 5 - PHOTOS */
-        .s5 {
+        /* ===== SECTION 5: PHOTOS ===== */
+        .photos-section {
             padding: 15px 25px;
             text-align: center;
         }
-        .s5 .title {
+        .photos-title {
             font-size: 1.1rem;
             color: #e91e63;
             margin-bottom: 20px;
             font-weight: 500;
         }
-        .s5 .grid {
+        .photos-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
         }
-        .s5 .frame {
+        .photo-frame {
             position: relative;
             aspect-ratio: 1;
             border-radius: 20px;
@@ -165,10 +179,10 @@
             transition: all 0.3s;
             background: linear-gradient(135deg, #ffebee 0%, #fce4ec 100%);
         }
-        .s5 .frame:hover {
+        .photo-frame:hover {
             transform: scale(1.03);
         }
-        .s5 .frame::before {
+        .photo-frame::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -176,7 +190,7 @@
             border-radius: 20px;
             z-index: 2;
         }
-        .s5 .frame::after {
+        .photo-frame::after {
             content: '';
             position: absolute;
             top: 3px; left: 3px; right: 3px; bottom: 3px;
@@ -184,13 +198,13 @@
             border-radius: 17px;
             z-index: 2;
         }
-        .s5 .img {
+        .photo-img {
             width: 100%; height: 100%;
             object-fit: cover;
             position: relative; z-index: 1;
             display: none;
         }
-        .s5 .placeholder {
+        .photo-placeholder {
             width: 100%; height: 100%;
             display: flex;
             align-items: center;
@@ -201,10 +215,10 @@
             gap: 8px;
             position: relative; z-index: 3;
         }
-        .s5 .placeholder input[type="file"] { display: none; }
+        .photo-placeholder input[type="file"] { display: none; }
 
-        /* SECTION 6 - REWARDS */
-        .s6 {
+        /* ===== SECTION 6: REWARDS ===== */
+        .rewards-section {
             background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 100%);
             margin: 0 25px 20px;
             padding: 25px;
@@ -212,19 +226,19 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             border: 1px solid #ffe0b2;
         }
-        .s6 .title {
+        .rewards-title {
             text-align: center;
             color: #ff9800;
             margin-bottom: 20px;
             font-weight: 500;
             font-size: 1.05rem;
         }
-        .s6 .list {
+        .rewards-list {
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
-        .s6 .item {
+        .reward-item {
             display: flex;
             align-items: center;
             padding: 14px 18px;
@@ -235,21 +249,21 @@
             transition: all 0.3s;
             border: 2px solid transparent;
         }
-        .s6 .item:hover {
+        .reward-item:hover {
             border-color: #ff9800;
             transform: translateX(5px);
         }
-        .s6 .icon { font-size: 1.8rem; margin-right: 14px; width: 45px; text-align: center; }
-        .s6 .text { flex: 1; font-weight: 500; color: #555; font-size: 0.9rem; }
-        .s6 .check { color: #4caf50; font-size: 1.3rem; display: none; }
-        .s6 .item.selected .check { display: block; }
+        .reward-icon { font-size: 1.8rem; margin-right: 14px; width: 45px; text-align: center; }
+        .reward-text { flex: 1; font-weight: 500; color: #555; font-size: 0.9rem; }
+        .reward-check { color: #4caf50; font-size: 1.3rem; display: none; }
+        .reward-item.selected .reward-check { display: block; }
 
-        /* SECTION 7 - FOOTER */
-        .s7 {
+        /* ===== SECTION 7: FOOTER ===== */
+        .footer-section {
             text-align: center;
             padding: 25px 20px;
         }
-        .s7 .btn {
+        .share-btn {
             background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%);
             color: white;
             border: none;
@@ -262,7 +276,7 @@
             transition: all 0.3s;
             letter-spacing: 0.5px;
         }
-        .s7 .btn:hover {
+        .share-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 12px 30px rgba(233,30,99,0.6);
             background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
@@ -276,7 +290,7 @@
             display: flex; align-items: center; justify-content: center;
             z-index: 9999;
         }
-        .loading .spinner {
+        .spinner {
             width: 50px; height: 50px;
             border: 5px solid #ffcdd2;
             border-top-color: #e91e63;
@@ -288,9 +302,9 @@
         /* Mobile */
         @media (max-width: 450px) {
             .container { width: 100%; }
-            .s1 { padding: 40px 20px 60px; }
-            .s1 h1 { font-size: 1.3rem; }
-            .s2 .names { font-size: 1.7rem; padding: 10px 30px; }
+            .header { padding: 40px 20px 60px; }
+            .header h1 { font-size: 1.3rem; }
+            .names-badge { font-size: 1.7rem; padding: 10px 30px; }
         }
     </style>
 </head>
@@ -301,134 +315,140 @@
 </div>
 
 <div class="container">
-    <!-- S1 -->
-    <div class="s1">
+    <!-- SECTION 1 -->
+    <div class="header">
         <h1>Transformei nossa historia<br>em um presente inesquecivel</h1>
         <p>Love Link</p>
     </div>
 
-    <!-- S2 -->
-    <div class="s2">
-        <div class="names">Pedro <span style="color:#ff80ab;font-size:1.4rem;">❤️</span> Camila</div>
+    <!-- SECTION 2 -->
+    <div class="couple-section">
+        <div class="names-badge">Rubens <span style="color:#ff80ab;font-size:1.4rem;">❤️</span> Hellen</div>
     </div>
 
-    <!-- S3 -->
-    <div class="s3">
-        <div class="title">Estamos juntos ha</div>
-        <div class="grid">
-            <div class="box"><span class="number" id="days">0</span><span class="label">Dias</span></div>
-            <div class="box"><span class="number" id="hours">0</span><span class="label">Horas</span></div>
-            <div class="box"><span class="number" id="minutes">0</span><span class="label">Min</span></div>
-            <div class="box"><span class="number" id="seconds">0</span><span class="label">Seg</span></div>
+    <!-- SECTION 3 -->
+    <div class="timer-section">
+        <div class="timer-title">Estamos juntos ha</div>
+        <div class="timer-grid">
+            <div class="timer-box"><span class="timer-number" id="days">0</span><span class="timer-label">Dias</span></div>
+            <div class="timer-box"><span class="timer-number" id="hours">0</span><span class="timer-label">Horas</span></div>
+            <div class="timer-box"><span class="timer-number" id="minutes">0</span><span class="timer-label">Min</span></div>
+            <div class="timer-box"><span class="timer-number" id="seconds">0</span><span class="timer-label">Seg</span></div>
         </div>
-        <div class="msg">e cada segundo vale a pena!</div>
+        <div class="timer-message">e cada segundo vale a pena!</div>
     </div>
 
-    <!-- S4 -->
-    <div class="s4">
-        <div class="content">
-            <div class="greeting">Querida Camila,</div>
-            <div class="text">
-                So queria dizer o quanto eu amo voce. Cada momento do nosso dia, por mais simples que seja, fica muito melhor com voce do meu lado.
+    <!-- SECTION 4 -->
+    <div class="letter-section">
+        <div class="letter-content">
+            <div class="letter-greeting">Querida Hellen,</div>
+            <div class="letter-text">
+                So queria dizer o quanto eu amo voce. Cada momento do nosso dia, por mais simples que seja, 
+                fica muito melhor com voce do meu lado.
             </div>
-            <div class="text">
-                Sou muito feliz por ter voce por perto e por tudo que a gente constroi juntos.
+            <div class="letter-text">
+                Sou muito feliz por ter voce por perto e por tudo que a gente constroi juntos. 
+                Voce e a melhor parte de mim.
             </div>
-            <div class="signature">Te amo demais!<br><span style="font-size:1.2rem;">❤️</span> Pedro</div>
-        </div>
-    </div>
-
-    <!-- S5 -->
-    <div class="s5">
-        <div class="title">Momentos que eternizaram<br>nossa relacao</div>
-        <div class="grid">
-            <div class="frame" onclick="document.getElementById('f1').click()">
-                <img class="img" id="p1">
-                <div class="placeholder">
-                    <span>📷</span><span>Foto 1</span>
-                    <input type="file" id="f1" accept="image/*" onchange="preview(this,'p1')">
-                </div>
-            </div>
-            <div class="frame" onclick="document.getElementById('f2').click()">
-                <img class="img" id="p2">
-                <div class="placeholder">
-                    <span>📷</span><span>Foto 2</span>
-                    <input type="file" id="f2" accept="image/*" onchange="preview(this,'p2')">
-                </div>
-            </div>
-            <div class="frame" onclick="document.getElementById('f3').click()">
-                <img class="img" id="p3">
-                <div class="placeholder">
-                    <span>📷</span><span>Foto 3</span>
-                    <input type="file" id="f3" accept="image/*" onchange="preview(this,'p3')">
-                </div>
-            </div>
-            <div class="frame" onclick="document.getElementById('f4').click()">
-                <img class="img" id="p4">
-                <div class="placeholder">
-                    <span>📷</span><span>Foto 4</span>
-                    <input type="file" id="f4" accept="image/*" onchange="preview(this,'p4')">
-                </div>
-            </div>
+            <div class="letter-signature">Te amo demais!<br><span style="font-size:1.2rem;">❤️</span> Rubens</div>
         </div>
     </div>
 
-    <!-- S6 -->
-    <div class="s6">
-        <div class="title">Sua recompensa por aturar<br>meu jeito... 😜</div>
-        <div class="list">
-            <div class="item" onclick="toggle(this)">
-                <div class="icon">💆‍♀️</div>
-                <div class="text">Uma massagem relaxante</div>
-                <div class="check">✓</div>
+    <!-- SECTION 5 -->
+    <div class="photos-section">
+        <div class="photos-title">Momentos que eternizaram<br>nossa relacao</div>
+        <div class="photos-grid">
+            <div class="photo-frame" onclick="document.getElementById('file1').click()">
+                <img class="photo-img" id="img1">
+                <div class="photo-placeholder">
+                    <span>📷</span><span>Adicionar Foto</span>
+                    <input type="file" id="file1" accept="image/*" onchange="preview(this,'img1')">
+                </div>
             </div>
-            <div class="item" onclick="toggle(this)">
-                <div class="icon">🍿</div>
-                <div class="text">Sessao pipoca e filme</div>
-                <div class="check">✓</div>
+            <div class="photo-frame" onclick="document.getElementById('file2').click()">
+                <img class="photo-img" id="img2">
+                <div class="photo-placeholder">
+                    <span>📷</span><span>Adicionar Foto</span>
+                    <input type="file" id="file2" accept="image/*" onchange="preview(this,'img2')">
+                </div>
             </div>
-            <div class="item" onclick="toggle(this)">
-                <div class="icon">🍷</div>
-                <div class="text">Um jantar romantico</div>
-                <div class="check">✓</div>
+            <div class="photo-frame" onclick="document.getElementById('file3').click()">
+                <img class="photo-img" id="img3">
+                <div class="photo-placeholder">
+                    <span>📷</span><span>Adicionar Foto</span>
+                    <input type="file" id="file3" accept="image/*" onchange="preview(this,'img3')">
+                </div>
             </div>
-            <div class="item" onclick="toggle(this)">
-                <div class="icon">🎁</div>
-                <div class="text">Um bebe lindo</div>
-                <div class="check">✓</div>
+            <div class="photo-frame" onclick="document.getElementById('file4').click()">
+                <img class="photo-img" id="img4">
+                <div class="photo-placeholder">
+                    <span>📷</span><span>Adicionar Foto</span>
+                    <input type="file" id="file4" accept="image/*" onchange="preview(this,'img4')">
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- S7 -->
-    <div class="s7">
-        <button class="btn" onclick="share()">Compartilhar nossa historia</button>
+    <!-- SECTION 6 -->
+    <div class="rewards-section">
+        <div class="rewards-title">Sua recompensa por aturar<br>meu jeito... 😜</div>
+        <div class="rewards-list">
+            <div class="reward-item" onclick="toggle(this)">
+                <div class="reward-icon">💆‍♀️</div>
+                <div class="reward-text">Uma massagem relaxante</div>
+                <div class="reward-check">✓</div>
+            </div>
+            <div class="reward-item" onclick="toggle(this)">
+                <div class="reward-icon">🍿</div>
+                <div class="reward-text">Sessao pipoca e filme</div>
+                <div class="reward-check">✓</div>
+            </div>
+            <div class="reward-item" onclick="toggle(this)">
+                <div class="reward-icon">🍷</div>
+                <div class="reward-text">Um jantar romantico</div>
+                <div class="reward-check">✓</div>
+            </div>
+            <div class="reward-item" onclick="toggle(this)">
+                <div class="reward-icon">👶</div>
+                <div class="reward-text">Um bebe lindo</div>
+                <div class="reward-check">✓</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div class="footer-section">
+        <button class="share-btn" onclick="share()">Compartilhar nossa historia</button>
     </div>
 </div>
 
 <script>
-    // Timer
-    const startDate = new Date('2023-01-01T00:00:00').getTime();
+    // Data: 26/07/2027
+    const startDate = new Date('2027-07-26T00:00:00').getTime();
+    
     function updateTimer() {
         const now = new Date().getTime();
         const diff = now - startDate;
+        
         if (diff < 0) {
             ['days','hours','minutes','seconds'].forEach(id => document.getElementById(id).textContent = '0');
             return;
         }
+        
         const d = Math.floor(diff / (1000*60*60*24));
         const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
         const m = Math.floor((diff % (1000*60*60)) / (1000*60));
         const s = Math.floor((diff % (1000*60)) / 1000);
+        
         document.getElementById('days').textContent = d;
         document.getElementById('hours').textContent = h;
         document.getElementById('minutes').textContent = m;
         document.getElementById('seconds').textContent = s;
     }
+    
     setInterval(updateTimer, 1000);
     updateTimer();
 
-    // Preview fotos
     function preview(input, imgId) {
         const file = input.files[0];
         if (file) {
@@ -442,21 +462,19 @@
         }
     }
 
-    // Toggle reward
     function toggle(item) {
         item.classList.toggle('selected');
     }
 
-    // Share
     function share() {
         if (navigator.share) {
             navigator.share({
-                title: 'Love Link - Pedro & Camila',
+                title: 'Love Link - Rubens & Hellen',
                 text: 'Veja o que eu preparei para nos! ❤️',
                 url: window.location.href
             });
         } else {
-            alert('Copie o link manualmente!');
+            alert('Copie o link manualmente para compartilhar!');
         }
     }
 
@@ -469,4 +487,3 @@
 
 </body>
 </html>
-<!-- Updated: Sat Aug  1 00:03:14 -03 2026 -->
